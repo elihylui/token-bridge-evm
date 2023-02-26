@@ -1,0 +1,25 @@
+{
+  "name": "token-bridge-evm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elihylui/token-bridge-evm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elihylui/token-bridge-evm/issues"
+  },
+  "homepage": "https://github.com/elihylui/token-bridge-evm#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.1"
+  }
+}
