@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/elihylui/token-bridge-evm#readme",
   "dependencies": {
-    "@openzeppelin/contracts": "^4.8.1"
+    "@openzeppelin/contracts": "^4.8.1",
+    "@truffle/hdwallet-provider": "^2.1.7",
+    "dotenv": "^16.0.3",
+    "web3": "^1.8.2"
   }
 }

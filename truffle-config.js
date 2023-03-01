@@ -41,10 +41,9 @@
  * https://trufflesuite.com/docs/truffle/getting-started/using-the-truffle-dashboard/
  */
 
-// require('dotenv').config();
-// const { MNEMONIC, PROJECT_ID } = process.env;
-
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+require('dotenv').config();
+const { MNEMONIC, INFURA_URL } = process.env;
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 module.exports = {
   /**
@@ -58,6 +57,24 @@ module.exports = {
    */
 
   networks: {
+    ethTestnet: {
+      provider: () => new HDWalletProvider(
+        MNEMONIC, 
+        INFURA_URL,
+        0,
+        1
+      ),
+      network_id: 5, //Goerli
+      skipDryRun: true
+    },
+    bscTestnet: {
+      provider: () => new HDWalletProvider(
+        MNEMONIC, 
+        'https://data-seed-prebsc-1-s1.binance.org:8545'
+      ),
+      network_id: 97,
+      skipDryRun: true
+    },
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
     // You should run a client (like ganache, geth, or parity) in a separate terminal
@@ -106,7 +123,7 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      version: "0.8.17" // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.8.0" // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
       //  optimizer: {
